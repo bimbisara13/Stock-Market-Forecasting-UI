@@ -8,5 +8,5 @@ cd stock-market-forecasting/
 
 npm install
 
-ng serve --open
+npm start
 ```
