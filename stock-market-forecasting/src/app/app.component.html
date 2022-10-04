@@ -1,10 +1,10 @@
 <app-home-page></app-home-page>
 
-<footer class="text-center lg:text-left bg-zinc-900 text-neutral-400 text-lg">
-    <div class="text-center p-5 bg-zinc-900 flex justify-between xl:flex-row md:flex-col">
-      <span class="mb-6 xl:ml-20">© 2022 Wealth Control™. All Rights Reserved. </span>
-      <span class="xl:mr-20">5151 State University Drive, Los Angeles, California - 90032</span>
-    </div>
+<footer class="text-center lg:text-left bg-zinc-900 text-neutral-400 text-lg" [ngStyle]="{ position: 'fixed', bottom: '0', width: '100%' }">
+  <div class="text-center p-5 bg-zinc-900 flex justify-between xl:flex-row md:flex-col">
+    <span class="mb-6 xl:ml-20">© 2022 Wealth Control™</span>
+    <span class="xl:mr-20">5151 State University Drive, Los Angeles, California - 90032</span>
+  </div>
 </footer>
 
 <router-outlet></router-outlet>
