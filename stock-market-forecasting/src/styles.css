@@ -9,3 +9,7 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
