@@ -1,4 +1,4 @@
 export interface Stocks {
-  value: string;
-  viewValue: string;
+  id: number;
+  name: string;
 }

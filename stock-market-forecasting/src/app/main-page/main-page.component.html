@@ -1,12 +1,12 @@
-<div class="flex xl:flex-row xl:my-4 md:my-20 xl:ml-20 mx-20 my-20">
+  <div class="flex xl:flex-row xl:my-4 md:my-20 xl:ml-20 mx-20 my-20">
     <div class="mt-20 xl:ml-24">
         <h1 class="text-2xl mb-10 font-semibold" [ngStyle]="{fontFamily: 'Poppins'}">Stock</h1>
         <mat-form-field appearance="fill" class="w-80">
           <!-- Stock Picker -->
             <mat-label>Select a Stock</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let stock of stocks" [value]="stock.value">
-                {{stock.viewValue}}
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let stock of stocks" [value]="stock.id">
+                {{ stock.name }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -23,7 +23,7 @@
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
         <div class="mt-10">
-          <button class="fill font-medium text-xl sm:mb-10 slide-in xl:mt-8">Forecast</button>
+          <button class="fill font-medium text-xl sm:mb-10 slide-in xl:mt-8" [routerLink]="['/analysis', selected]">Forecast</button>
         </div>
     </div>
     <div class="ml-56 mt-20">
