@@ -29,7 +29,7 @@ for ticker in tickers :
 
 
     outname = ticker + '.csv'
-    outdir = f"{ticker}" 
+    outdir = f".\{ticker}" 
 
     if not os.path.exists(outdir):
         os.mkdir(outdir)
