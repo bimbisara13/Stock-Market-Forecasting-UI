@@ -9,6 +9,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { IgxFinancialChartModule, IgxLegendModule } from "igniteui-angular-charts";
+import { FinancialDataService } from "./data.service";
 
 @NgModule({
   declarations: [AppComponent, routingComponents],
@@ -21,8 +23,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatFormFieldModule,
     MatNativeDateModule,
     HttpClientModule,
+    IgxFinancialChartModule,
+    IgxLegendModule
   ],
-  providers: [],
+  providers: [FinancialDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

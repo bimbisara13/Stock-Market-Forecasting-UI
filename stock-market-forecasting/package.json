@@ -23,6 +23,7 @@
     "@angular/router": "^14.0.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "igniteui-angular-charts": "^14.2.0",
     "jquery": "^3.6.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
