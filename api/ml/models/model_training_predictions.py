@@ -42,10 +42,10 @@ def _model_training (df, model, lags) :
     #Model Training and parameter tuning using grid search
 
     if model == "XgBoost":
-        reg_xgb = xgb.XGBRegressor()
-        grid_values = {'max_depth': [10,20],'n_estimators':[1000 ,500],'learning_rate':[0.01,0.1,1]}
-        model_name = GridSearchCV(reg_xgb, param_grid = grid_values)
-        print (" XgBoost Model Training...........")
+        model_name = xgb.XGBRegressor()
+        # grid_values = {'max_depth': [10,20],'n_estimators':[1000 ,500],'learning_rate':[0.01,0.1,1]}
+        # model_name = GridSearchCV(reg_xgb, param_grid = grid_values)
+        # print (" XgBoost Model Training...........")
         model_name.fit(x, y)
 
     # pickle.dump(grid_reg_xgb, open('model.pkl', 'wb'))
