@@ -1,6 +1,8 @@
-<div class="flex xl:flex-row items-center xl:ml-20 xl:mt-28 md:my-28 md:ml-20 mx-5 my-16">
+<div class="flex xl:flex-row items-center xl:ml-20 xl:mt-56 md:my-28 md:ml-20 mx-5 my-16">
     <div>
-        <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 pb-5">{{ stock.name }}</h1>
+        <h1
+            class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 pb-5">
+            {{ stock.name }}</h1>
         <!-- <p class="text-4xl mt-10 text-medium">Model Metrics</p>
         <div class="xl:mt-12">
             <h1 class="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-yellow-400">Accuracy</h1>
@@ -12,6 +14,10 @@
             <h1 class="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-lime-300 to-amber-400">Bias</h1>
             <p class="xl: mt-5 text-2xl font-medium">Mean Biased Error &#8211; <span class="font-semibold tracking-wide">{{ stock.mbe }}</span></p>
         </div> -->
+        <div class="mt-10">
+            <button class="fill font-medium text-xl sm:mb-10 slide-in xl:mt-8" (click)="sendRequest()">Visualise
+                &#8594;</button>
+        </div>
     </div>
     <div>
     </div>
