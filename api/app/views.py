@@ -9,6 +9,12 @@ from .models import MLModels
 
 class Prediction(APIView):
     
+    def get(self, request):
+        data = {
+            'Hello': 'World'
+        }
+        return Response(data, status=200)
+
     def post(self, request):
         stock_name = request.data['stock_name']
         data = main(stock_name)
