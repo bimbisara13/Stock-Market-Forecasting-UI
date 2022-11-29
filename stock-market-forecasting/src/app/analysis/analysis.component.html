@@ -4,28 +4,14 @@
             class="my-12 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 pb-5">
             {{ stock.name }}</h1>
     </div>
-    <!-- <p class="text-4xl mt-10 text-medium">Model Metrics</p>
-        <div class="xl:mt-12">
-            <h1 class="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-yellow-400">Accuracy</h1>
-            <p class="xl: mt-5 text-2xl font-medium">Mean Absolute Percentage Error &#8211; <span class="font-semibold tracking-wide">{{ stock.mape }}</span></p>
-            <p class="xl: mt-5 text-2xl font-medium">Root Mean Square Error &#8211; <span class="font-semibold tracking-wide">{{ stock.rmse }}</span></p>
-            <p class="xl: mt-5 text-2xl font-medium">Mean Absolute Error &#8211; <span class="font-semibold tracking-wide">{{ stock.mae }}</span></p>
-        </div>
-        <div class="xl:mt-12">
-            <h1 class="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-rose-500 via-lime-300 to-amber-400">Bias</h1>
-            <p class="xl: mt-5 text-2xl font-medium">Mean Biased Error &#8211; <span class="font-semibold tracking-wide">{{ stock.mbe }}</span></p>
-        </div> -->
-    <!-- <div>
-        <button class="fill font-medium text-xl sm:mb-10 slide-in ml-36" (click)="sendRequest()">Visualise
-            &#8594;</button>
-    </div> -->
 </div>
 <div class="container vertical xl:ml-20 h-[34rem]">
     <div class="options vertical text-xl">
-        Model Error: <label id="legendTitle" class="font-semibold">{{ error }}</label>  (Value lesser than 5 is considered to be good)
+        Model Error: <label id="legendTitle" class="font-semibold">{{ data[1] }}</label> (Value lesser than 5 is
+        considered to be good)
     </div>
 
-    <igx-financial-chart height="100%" width="100%" [dataSource]="data" chartType="line" thickness=2
+    <igx-financial-chart height="100%" width="100%" [dataSource]="getData()" chartType="line" thickness=2
         yAxisMode="PercentChange" yAxisTitle="Percent Changed">
     </igx-financial-chart>
 </div>
