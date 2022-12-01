@@ -18,15 +18,13 @@ class Prediction(APIView):
     def post(self, request):
         stock_name = request.data['stock_name']
         data = main(stock_name)
-        df_accuracy = data['df_accuracy']
-        error_xgb = df_accuracy['error_xgb']
-        error_rf = df_accuracy['error_rf']
-        error_ridge = df_accuracy['error_ridge']
-        error_lasso = df_accuracy['error_lasso']
+        best_model = data['best_model']
+        mape = data['MAPE']
+        predictions = data['predictions']
+        df = data['df_plot']
         model = MLModels()
-        model.xgboost = error_xgb
-        model.random_forest = error_rf
-        model.lasso = error_lasso
-        model.ridge = error_ridge
+        model.stock_name = stock_name
+        model.best_model = best_model
+        model.mape = mape
         model.save()
         return Response(data, status=200)
