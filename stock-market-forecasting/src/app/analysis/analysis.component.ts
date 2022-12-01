@@ -48,18 +48,19 @@ export class AnalysisComponent implements OnInit {
     this.data = await this.dataService.sendRequest(this.requestOptions);
 
     this.getProperData(
-      this.data[0].df_plot.Actual,
-      this.data[0].df_plot.Lasso,
-      this.data[0].df_plot.Date
+      this.data.df_plot.Actual,
+      this.data.df_plot.Best_Model,
+      this.data.df_plot.Date
     );
   }
 
   getProperData(actual: any, best: any, date: any) {
-    for (let i = 0; i < date.length; i++) {
+    console.log(date);
+    for (const element of date) {
       this.dateList.push({
-        year: date[i].slice(0, 4),
-        monthIndex: date[i].slice(5, 7) - 1,
-        day: date[i].slice(8, 10),
+        year: element.slice(0, 4),
+        monthIndex: element.slice(5, 7) - 1,
+        day: element.slice(8, 10),
       });
     }
 
@@ -84,8 +85,6 @@ export class AnalysisComponent implements OnInit {
         predicted: best[i],
       });
     }
-
-    console.log(this.actualList);
 
     return [this.actualList, this.predictedList];
   }

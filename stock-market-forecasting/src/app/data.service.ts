@@ -18,9 +18,8 @@ export class DataService {
   }) {
     this.response = await fetch('http://127.0.0.1:8000/', requestOptions);
     this.resData = await this.response.json();
-    this.error = this.resData.df_accuracy.error_lasso;
 
-    return [this.resData, this.error];
+    return this.resData;
   }
 
 }

@@ -5,12 +5,12 @@
             {{ stock.name }}</h1>
     </div>
 </div>
-<div class="container vertical xl:ml-20 h-[34rem]">
+<div class="container vertical xl:ml-20 h-[30rem]">
     <div class="options vertical text-xl">
-        Model Error: <label id="legendTitle" class="font-semibold">{{ data[1] }}</label> (Value lesser than 5 is
-        considered to be good)
+        Best model: <label id="legendTitle" class="font-semibold mr-8">{{ data.best_model }}</label>
+        Model Error: <label id="legendTitle" class="font-semibold">{{ data.MAPE }}</label>
     </div>
-
+   
     <igx-financial-chart height="100%" width="100%" [dataSource]="getData()" chartType="line" thickness=2
         yAxisMode="PercentChange" yAxisTitle="Percent Changed">
     </igx-financial-chart>
