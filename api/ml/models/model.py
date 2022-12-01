@@ -96,7 +96,7 @@ def _accuracy (df, stock_name) :
 
     
 
-    result.to_csv('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\model_results.csv', index = False)
+    # result.to_csv('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\model_results.csv', index = False)
 
     return (model_index[minpos], min_MAPE)
 
@@ -127,7 +127,8 @@ def _plot (df, stock_name, bst_model) :
     # ax.set_title(bst_model)
 
     # plt.savefig("Plot_" + stock_name +  ".png")
-    return df[["Date", "Actual", bst_model]]
+    df.rename(columns={bst_model: 'Best_Model'}, inplace=True)
+    return df[["Date", "Actual", "Best_Model"]]
 
     # plt.show()
     # plt.pause(5)

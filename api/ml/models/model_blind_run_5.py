@@ -115,7 +115,8 @@ def _model_prediction_blind_run (df, model, lags) :
 
 
     finaloutput  = finaloutput.append(finalpred, ignore_index = True, sort = False)
-    finaloutput.to_json('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\final_predictions.json')
+    finaloutput.rename(columns={model: 'Best_Model'}, inplace=True)
+    # finaloutput.to_json('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\final_predictions.json')
     # testing.to_csv('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\testing_predictions.csv', index = False)
     return finaloutput 
 

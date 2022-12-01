@@ -128,7 +128,7 @@ def _model_training (df, model, lags) :
 
 
     finaloutput  = finaloutput.append(finalpred, ignore_index = True, sort = False)
-    finaloutput.to_csv('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\validation_predictions.csv', index = False, mode = 'a' )
+    # finaloutput.to_csv('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\validation_predictions.csv', index = False, mode = 'a' )
     # testing.to_csv('C:\\Users\\mabbasi4\\Documents\\Courses\\5337\\Final_Stock_Forecasting\\validation_testing_predictions.csv', index = False)
     return finaloutput 
 
