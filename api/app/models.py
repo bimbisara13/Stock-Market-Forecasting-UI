@@ -2,14 +2,12 @@ from django.db import models
 
 # Create your models here.
 class MLModels(models.Model):
-    xgboost = models.FloatField()
-    random_forest = models.FloatField()
-    lasso = models.FloatField()
-    ridge = models.FloatField()
-
+    stock_name = models.CharField(max_length=20)
+    best_model = models.CharField(max_length=20)
+    mape = models.FloatField()
+    
     def __str__(self):
-        message = f'XgBoost: {self.xgboost}\n' \
-                f'Random Forest: {self.random_forest}\n' \
-                f'Lasso: {self.lasso}\n' \
-                f'Ridge: {self.ridge}\n'
+        message = f'stock_name: {self.stock_name}\n' \
+                f'best_model: {self.best_model}\n' \
+                f'mape: {self.mape}\n'
         return message
