@@ -8,9 +8,13 @@
 <div class="container vertical xl:ml-20 h-[30rem]">
     <div class="options vertical text-xl">
         Best model: <label id="legendTitle" class="font-semibold mr-8">{{ data.best_model }}</label>
-        Model Error: <label id="legendTitle" class="font-semibold">{{ data.MAPE }}</label>
+        Model Error: <label id="legendTitle" class="font-semibold mr-8">{{ data.MAPE }}</label>
+        <button class="btn mb-2 text-base px-5 py-1 rounded-lg"
+            (click)="getCsvData(data.predictions.Best_Model, data.predictions.Date)">
+            Export &#x2193;
+        </button>
     </div>
-   
+
     <igx-financial-chart height="100%" width="100%" [dataSource]="getData()" chartType="line" thickness=2
         yAxisMode="PercentChange" yAxisTitle="Percent Changed">
     </igx-financial-chart>

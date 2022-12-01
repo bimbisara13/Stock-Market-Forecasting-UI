@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StocksService } from '../stocks.service';
 import { DataService } from '../data.service';
+import { CsvDataService } from '../csv.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,7 +11,6 @@ import { DataService } from '../data.service';
   templateUrl: './analysis.component.html',
   styleUrls: ['./analysis.component.css'],
 })
-
 export class AnalysisComponent implements OnInit {
   public data: any;
   stock: any;
@@ -24,7 +24,7 @@ export class AnalysisComponent implements OnInit {
   actualList: any = undefined || [];
   predictedList: any = undefined || [];
 
-  result: any;
+  csvData: any = undefined || [];
 
   requestOptions = {
     method: 'POST',
@@ -39,7 +39,8 @@ export class AnalysisComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private service: StocksService,
-    private dataService: DataService
+    private dataService: DataService,
+    private csvService: CsvDataService
   ) {}
 
   async ngOnInit() {
@@ -55,7 +56,6 @@ export class AnalysisComponent implements OnInit {
   }
 
   getProperData(actual: any, best: any, date: any) {
-    console.log(date);
     for (const element of date) {
       this.dateList.push({
         year: element.slice(0, 4),
@@ -94,5 +94,18 @@ export class AnalysisComponent implements OnInit {
     this.predictedList.title = 'Predicted';
 
     return [this.actualList, this.predictedList];
+  }
+
+  getCsvData(bestModel: any, date: any) {
+    for (let i = 0; i < bestModel.length; i++) {
+      this.csvData.push({
+        date: date[i],
+        bestModel: bestModel[i],
+      });
+    }
+
+    this.csvService.downloadFile(this.csvData, 'test-data');
+
+    return this.csvData;
   }
 }
